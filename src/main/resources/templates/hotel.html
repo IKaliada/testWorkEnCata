@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>
+        <h3>Hotel</h3>
+    </title>
+</head>
+<body>
+<form action="#" th:action="@{/admin/hotel}" th:object="${hotel}" method="post">
+    <table>
+        <tr>
+            </td>
+            <td><label>
+                <input hidden type="text" th:field="*{id}"/>
+            </label></td>
+        </tr>
+        <tr>
+            <td>Hotel opens:</td>
+            <td><label>
+                <input type="time" th:field="*{workingTimeFrom}" th:placeholder="*{workingTimeFrom}"/>
+            </label></td>
+        </tr>
+        <tr>
+            <td>Hotel closes:</td>
+            <td><label>
+                <input type="time" th:field="*{workingTimeTo}" th:placeholder="*{workingTimeTo}"/>
+            </label></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Save</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

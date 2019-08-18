@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>
+        <h3>Room</h3>
+    </title>
+</head>
+<body>
+<form action="#" th:action="@{/admin/room}" th:object="${room}" method="post">
+    <table>
+        <tr>
+            </td>
+            <td><label>
+                <input hidden type="text" th:field="*{id}"/>
+            </label></td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><label>
+                <input type="text" th:field="*{name}" th:placeholder="*{name}"/>
+            </label></td>
+        </tr>
+        <tr>
+            <td>Number of bed:</td>
+            <td><label>
+                <input type="text" th:field="*{numberOfBed}" th:placeholder="*{numberOfBed}"/>
+            </label></td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+            <td><label>
+                <input type="text" th:field="*{price}" th:placeholder="*{price}"/>
+            </label></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Create room</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

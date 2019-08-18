@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <h1>Rooms</h1>
+</head>
+<body>
+<table border="1" class='table table-sm responsive'>
+    <thead class='thead-default'>
+    <tr>
+        <th>Name</th>
+        <th>Number Of Bed</th>
+        <th>Price</th>
+        <th>Empty</th>
+        <th>Booked from:</th>
+        <th>Booked to:</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="room : ${rooms}">
+        <td th:text="${room.name}"></td>
+        <td th:text="${room.numberOfBed}"></td>
+        <td th:text="${room.price}"></td>
+        <td th:text="${room.getFree()}"></td>
+        <td th:text="${room.bookingDateFrom}"></td>
+        <td th:text="${room.bookingDateTo}"></td>
+        <td>
+            <a th:href="${'/user/rooms/' + room.id}">Book Room</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>
